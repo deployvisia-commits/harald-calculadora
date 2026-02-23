@@ -1,10 +1,10 @@
-import { createBrowserRouter } from 'react-router';
+import { createHashRouter } from 'react-router';
 import Dashboard from './pages/Dashboard';
 import Calculator from './pages/Calculator';
 import Tempering from './pages/Tempering';
 import Catalog from './pages/Catalog';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     Component: Dashboard,
