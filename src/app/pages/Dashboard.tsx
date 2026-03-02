@@ -83,12 +83,12 @@ export default function Dashboard() {
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-br from-[#3D1E12] via-[#5D3E32] to-[#3D1E12] bg-clip-text text-transparent">
-              Harald Co-Pilot
+              Assistente Harald
             </span>
           </h1>
-          
+
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Ferramentas profissionais para otimizar seus processos, reduzir custos e 
+            Ferramentas profissionais para otimizar seus processos, reduzir custos e
             alcançar resultados perfeitos com chocolates Harald
           </p>
 
@@ -124,7 +124,7 @@ export default function Dashboard() {
                   <Card className="h-full border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden relative bg-white/70 backdrop-blur-sm">
                     {/* Gradient overlay on hover */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                    
+
                     <CardHeader className="relative">
                       <motion.div
                         whileHover={{ rotate: 360 }}
@@ -133,16 +133,16 @@ export default function Dashboard() {
                       >
                         <Icon className="h-7 w-7 text-white" />
                       </motion.div>
-                      
+
                       <CardTitle className="text-2xl mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${feature.gradient} transition-all duration-300">
                         {feature.title}
                       </CardTitle>
-                      
+
                       <CardDescription className="text-base leading-relaxed">
                         {feature.description}
                       </CardDescription>
                     </CardHeader>
-                    
+
                     <CardContent>
                       <div className="flex items-center gap-2 text-sm font-semibold text-gray-600 group-hover:text-[#3D1E12] transition-colors duration-300">
                         Acessar
@@ -170,13 +170,13 @@ export default function Dashboard() {
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFD100] rounded-full blur-3xl opacity-20" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FFD100] rounded-full blur-3xl opacity-10" />
-            
+
             <CardHeader className="relative z-10">
               <CardTitle className="text-3xl mb-4">
-                Por que usar o Harald Co-Pilot?
+                Por que usar o Assistente Harald?
               </CardTitle>
             </CardHeader>
-            
+
             <CardContent className="relative z-10 space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex gap-4">

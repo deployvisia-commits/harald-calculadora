@@ -1,4 +1,4 @@
-# Harald Co-Pilot MVP
+# Assistente Harald MVP
 
 Ferramenta técnica de precisão para confeiteiros que trabalham com chocolates Harald.
 

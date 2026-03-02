@@ -48,7 +48,7 @@ export function ModeSelector({ onSelectMode }: ModeSelectorProps) {
 
             <h2 className="text-2xl mb-2 text-[#3D1E12]">Modo Guiado</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Defina seu objetivo e o Co-Pilot te guia passo a passo: escolha do
+              Defina seu objetivo e o Assistente te guia passo a passo: escolha do
               chocolate, inclusões, recheio e lista de compras automática.
             </p>
 

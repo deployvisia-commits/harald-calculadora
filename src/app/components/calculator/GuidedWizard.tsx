@@ -216,13 +216,13 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
 
     const planoCompra = embalagens
       ? {
-          [state.linhaHarald]: {
-            kgNecessarios: necessidadeKg,
-            kgTotal: embalagens.total,
-            embalagens: embalagens.detalhes,
-            sobra: embalagens.sobra,
-          },
-        }
+        [state.linhaHarald]: {
+          kgNecessarios: necessidadeKg,
+          kgTotal: embalagens.total,
+          embalagens: embalagens.detalhes,
+          sobra: embalagens.sobra,
+        },
+      }
       : {};
 
     // Extra ingredients list
@@ -288,11 +288,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => update({ tipoProduto: prod.value })}
-                  className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${
-                    isSelected
+                  className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${isSelected
                       ? "border-[#FFD100] bg-gradient-to-br from-amber-50 to-[#FFD100]/10 shadow-lg shadow-[#FFD100]/20"
                       : "border-gray-200 bg-white hover:border-[#FFD100]/50 hover:bg-amber-50/30"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-lg">{prod.label}</span>
@@ -339,11 +338,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
               <button
                 key={q}
                 onClick={() => update({ quantidade: q })}
-                className={`px-3 py-1 rounded-full text-sm border transition-all cursor-pointer ${
-                  state.quantidade === q
+                className={`px-3 py-1 rounded-full text-sm border transition-all cursor-pointer ${state.quantidade === q
                     ? "bg-[#FFD100] border-[#FFD100] text-[#3D1E12]"
                     : "border-gray-200 text-gray-600 hover:border-[#FFD100]"
-                }`}
+                  }`}
               >
                 {q}
               </button>
@@ -379,11 +377,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                 onClick={() =>
                   update({ linhaHarald: linha.nome, sabor: linha.sabores[0] })
                 }
-                className={`w-full p-5 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${
-                  isSelected
+                className={`w-full p-5 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${isSelected
                     ? "border-[#FFD100] bg-gradient-to-r from-amber-50 to-[#FFD100]/10 shadow-lg shadow-[#FFD100]/20"
                     : "border-gray-200 bg-white hover:border-gray-300"
-                }`}
+                  }`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
@@ -409,8 +406,8 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                       {isRecomendado && rec
                         ? rec.motivoRecomendado
                         : isEconomico && rec
-                        ? rec.motivoEconomico
-                        : `Sabores: ${linha.sabores.join(", ")}`}
+                          ? rec.motivoEconomico
+                          : `Sabores: ${linha.sabores.join(", ")}`}
                     </p>
                     <p className="text-xs text-gray-400 mt-1">
                       Embalagens: {linha.embalagens.map((e) => `${e}kg`).join(", ")} |{" "}
@@ -447,11 +444,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                 <button
                   key={sabor}
                   onClick={() => update({ sabor })}
-                  className={`px-4 py-2 rounded-xl border-2 transition-all cursor-pointer ${
-                    state.sabor === sabor
+                  className={`px-4 py-2 rounded-xl border-2 transition-all cursor-pointer ${state.sabor === sabor
                       ? "border-[#FFD100] bg-[#FFD100]/10 text-[#3D1E12]"
                       : "border-gray-200 text-gray-600 hover:border-[#FFD100]/50"
-                  }`}
+                    }`}
                 >
                   {sabor}
                 </button>
@@ -463,11 +459,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
         {/* Tempering info */}
         {state.linhaHarald && (
           <div
-            className={`p-4 rounded-xl border ${
-              getLinha(state.linhaHarald)?.tipo === "Nobre"
+            className={`p-4 rounded-xl border ${getLinha(state.linhaHarald)?.tipo === "Nobre"
                 ? "bg-amber-50 border-amber-200"
                 : "bg-green-50 border-green-200"
-            }`}
+              }`}
           >
             <div className="flex items-start gap-3">
               <Info className="h-5 w-5 flex-shrink-0 mt-0.5 text-gray-600" />
@@ -476,7 +471,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   <>
                     <p className="text-amber-900 mb-3">
                       <strong>{state.linhaHarald}</strong> requer temperagem.
-                      Use o Assistente de Temperagem do Co-Pilot para curvas precisas.
+                      Use o Assistente de Temperagem para curvas precisas.
                     </p>
                     <Link
                       to={`/temperagem?produto=${getTemperingProductId(state.linhaHarald, state.sabor)}`}
@@ -634,13 +629,12 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   key={preset.id}
                   onClick={() => (isAdded ? removeInclusao(preset.id) : addInclusao(preset))}
                   disabled={totalPercent >= 50 && !isAdded}
-                  className={`p-3 rounded-xl border text-left text-sm transition-all cursor-pointer ${
-                    isAdded
+                  className={`p-3 rounded-xl border text-left text-sm transition-all cursor-pointer ${isAdded
                       ? "border-[#FFD100] bg-[#FFD100]/10"
                       : totalPercent >= 50
-                      ? "border-gray-100 bg-gray-50 opacity-50 cursor-not-allowed"
-                      : "border-gray-200 hover:border-[#FFD100]/50"
-                  }`}
+                        ? "border-gray-100 bg-gray-50 opacity-50 cursor-not-allowed"
+                        : "border-gray-200 hover:border-[#FFD100]/50"
+                    }`}
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <span>{preset.icone}</span>
@@ -679,11 +673,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
             <button
               key={opt.value}
               onClick={() => update({ tipoRecheio: opt.value, recheioSelecionado: null })}
-              className={`p-3 rounded-xl border-2 text-center transition-all cursor-pointer ${
-                state.tipoRecheio === opt.value
+              className={`p-3 rounded-xl border-2 text-center transition-all cursor-pointer ${state.tipoRecheio === opt.value
                   ? "border-[#FFD100] bg-[#FFD100]/10"
                   : "border-gray-200 hover:border-[#FFD100]/50"
-              }`}
+                }`}
             >
               <p className="text-sm text-[#3D1E12]">{opt.label}</p>
               <p className="text-xs text-gray-500">{opt.desc}</p>
@@ -707,11 +700,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   key={template.id}
                   whileHover={{ scale: 1.01 }}
                   onClick={() => update({ recheioSelecionado: template.id })}
-                  className={`w-full p-4 rounded-xl border-2 text-left transition-all cursor-pointer ${
-                    isSelected
+                  className={`w-full p-4 rounded-xl border-2 text-left transition-all cursor-pointer ${isSelected
                       ? "border-[#FFD100] bg-gradient-to-r from-amber-50 to-[#FFD100]/10 shadow-md"
                       : "border-gray-200 hover:border-gray-300"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">{template.icone}</span>
@@ -727,11 +719,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                         {template.ingredientes.map((ing, i) => (
                           <span
                             key={i}
-                            className={`text-xs px-2 py-0.5 rounded-full ${
-                              ing.isChocolate
+                            className={`text-xs px-2 py-0.5 rounded-full ${ing.isChocolate
                                 ? "bg-[#3D1E12] text-[#FFD100]"
                                 : "bg-gray-100 text-gray-600"
-                            }`}
+                              }`}
                           >
                             {ing.nome}
                           </span>
@@ -887,8 +878,8 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                     (state.volumeRecheioPorUnidade *
                       state.quantidade *
                       state.proporcaoChocolateRecheio) /
-                      100 /
-                      1000,
+                    100 /
+                    1000,
                     2
                   )}{" "}
                   kg
@@ -1135,42 +1126,37 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   onClick={() => {
                     if (isCompleted || isActive) setStep(s.id);
                   }}
-                  className={`flex flex-col items-center gap-1 cursor-pointer transition-all ${
-                    isActive || isCompleted ? "opacity-100" : "opacity-40"
-                  }`}
+                  className={`flex flex-col items-center gap-1 cursor-pointer transition-all ${isActive || isCompleted ? "opacity-100" : "opacity-40"
+                    }`}
                 >
                   <div
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                      isActive
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${isActive
                         ? "bg-[#FFD100] shadow-lg shadow-[#FFD100]/30"
                         : isCompleted
-                        ? "bg-[#3D1E12]"
-                        : "bg-gray-200"
-                    }`}
+                          ? "bg-[#3D1E12]"
+                          : "bg-gray-200"
+                      }`}
                   >
                     {isCompleted ? (
                       <Check className="h-5 w-5 text-[#FFD100]" />
                     ) : (
                       <Icon
-                        className={`h-5 w-5 ${
-                          isActive ? "text-[#3D1E12]" : "text-gray-400"
-                        }`}
+                        className={`h-5 w-5 ${isActive ? "text-[#3D1E12]" : "text-gray-400"
+                          }`}
                       />
                     )}
                   </div>
                   <span
-                    className={`text-xs hidden sm:block ${
-                      isActive ? "text-[#3D1E12]" : "text-gray-400"
-                    }`}
+                    className={`text-xs hidden sm:block ${isActive ? "text-[#3D1E12]" : "text-gray-400"
+                      }`}
                   >
                     {s.label}
                   </span>
                 </button>
                 {index < STEPS.length - 1 && (
                   <div
-                    className={`flex-1 h-0.5 mx-2 rounded transition-colors duration-300 ${
-                      step > s.id ? "bg-[#3D1E12]" : "bg-gray-200"
-                    }`}
+                    className={`flex-1 h-0.5 mx-2 rounded transition-colors duration-300 ${step > s.id ? "bg-[#3D1E12]" : "bg-gray-200"
+                      }`}
                   />
                 )}
               </div>
@@ -1214,8 +1200,8 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
               ? state.inclusoes.length === 0 && step === 3
                 ? "Pular"
                 : state.tipoRecheio === "sem" && step === 4
-                ? "Pular"
-                : "Próximo"
+                  ? "Pular"
+                  : "Próximo"
               : "Próximo"}
             <ChevronRight className="h-4 w-4" />
           </Button>
