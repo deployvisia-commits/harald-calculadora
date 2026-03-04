@@ -339,7 +339,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                 key={q}
                 onClick={() => update({ quantidade: q })}
                 className={`px-3 py-1 rounded-full text-sm border transition-all cursor-pointer ${state.quantidade === q
-                  ? "bg-[#cf2e2e] border-[#cf2e2e] text-[#757575]"
+                  ? "bg-[#cf2e2e] border-[#cf2e2e] text-white"
                   : "border-[#abb8c3]/40 text-[#757575] hover:border-[#cf2e2e]"
                   }`}
               >
@@ -390,7 +390,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                         {linha.tipo}
                       </Badge>
                       {isRecomendado && (
-                        <Badge className="bg-[#cf2e2e] text-[#757575] gap-1">
+                        <Badge className="bg-[#cf2e2e] text-white gap-1 hover:bg-[#cf2e2e]">
                           <Star className="h-3 w-3" />
                           Recomendado
                         </Badge>
@@ -422,7 +422,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                       animate={{ scale: 1 }}
                       className="w-8 h-8 rounded-full bg-[#cf2e2e] flex items-center justify-center flex-shrink-0 mt-1"
                     >
-                      <Check className="h-5 w-5 text-[#757575]" />
+                      <Check className="h-5 w-5 text-white" />
                     </motion.div>
                   )}
                 </div>
@@ -445,7 +445,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   key={sabor}
                   onClick={() => update({ sabor })}
                   className={`px-4 py-2 rounded-xl border-2 transition-all cursor-pointer ${state.sabor === sabor
-                    ? "border-[#cf2e2e] bg-[#cf2e2e]/10 text-[#757575]"
+                    ? "border-[#cf2e2e] bg-[#cf2e2e] text-white"
                     : "border-[#abb8c3]/40 text-[#757575] hover:border-[#cf2e2e]/50"
                     }`}
                 >
@@ -630,7 +630,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   onClick={() => (isAdded ? removeInclusao(preset.id) : addInclusao(preset))}
                   disabled={totalPercent >= 50 && !isAdded}
                   className={`p-3 rounded-xl border text-left text-sm transition-all cursor-pointer ${isAdded
-                    ? "border-[#cf2e2e] bg-[#cf2e2e]/10"
+                    ? "border-[#cf2e2e] bg-[#cf2e2e] text-white"
                     : totalPercent >= 50
                       ? "border-[#abb8c3]/40 bg-[#abb8c3]/10 opacity-50 cursor-not-allowed"
                       : "border-[#abb8c3]/40 hover:border-[#cf2e2e]/50"
@@ -638,10 +638,10 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <span>{preset.icone}</span>
-                    <span className="text-[#757575] truncate">{preset.nome}</span>
-                    {isAdded && <Check className="h-3 w-3 text-[#7bdcb5] flex-shrink-0 ml-auto" />}
+                    <span className={`truncate ${isAdded ? 'text-white font-medium' : 'text-[#757575]'}`}>{preset.nome}</span>
+                    {isAdded && <Check className="h-3 w-3 text-white flex-shrink-0 ml-auto" />}
                   </div>
-                  <p className="text-xs text-[#757575] truncate">{preset.descricao}</p>
+                  <p className={`text-xs truncate ${isAdded ? 'text-white/80' : 'text-[#757575]'}`}>{preset.descricao}</p>
                 </button>
               );
             })}
@@ -701,7 +701,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                   whileHover={{ scale: 1.01 }}
                   onClick={() => update({ recheioSelecionado: template.id })}
                   className={`w-full p-4 rounded-xl border-2 text-left transition-all cursor-pointer ${isSelected
-                    ? "border-[#cf2e2e] bg-[#abb8c3]/10 shadow-md"
+                    ? "border-[#cf2e2e] bg-[#cf2e2e] text-white shadow-md"
                     : "border-[#abb8c3]/40 hover:border-[#abb8c3]/40"
                     }`}
                 >
@@ -709,19 +709,19 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                     <span className="text-2xl">{template.icone}</span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="text-[#757575]">{template.nome}</span>
+                        <span className={`${isSelected ? 'text-white font-semibold' : 'text-[#757575]'}`}>{template.nome}</span>
                         {isSelected && (
-                          <Check className="h-4 w-4 text-[#7bdcb5] flex-shrink-0" />
+                          <Check className="h-4 w-4 text-white flex-shrink-0" />
                         )}
                       </div>
-                      <p className="text-xs text-[#757575] mb-2">{template.descricao}</p>
+                      <p className={`text-xs mb-2 ${isSelected ? 'text-white/90' : 'text-[#757575]'}`}>{template.descricao}</p>
                       <div className="flex flex-wrap gap-1">
                         {template.ingredientes.map((ing, i) => (
                           <span
                             key={i}
                             className={`text-xs px-2 py-0.5 rounded-full ${ing.isChocolate
-                              ? "bg-[#757575] text-[#cf2e2e]"
-                              : "bg-[#abb8c3]/10 text-[#757575]"
+                              ? (isSelected ? "bg-white text-[#cf2e2e]" : "bg-[#757575] text-white")
+                              : (isSelected ? "bg-white/20 text-white" : "bg-[#abb8c3]/10 text-[#757575]")
                               }`}
                           >
                             {ing.nome}
@@ -729,7 +729,7 @@ export function GuidedWizard({ onBack, onSave, initialData }: GuidedWizardProps)
                         ))}
                       </div>
                       {gramasPorUn > 0 && (
-                        <p className="text-xs text-[#abb8c3] mt-2">
+                        <p className={`text-xs mt-2 ${isSelected ? 'text-white/80' : 'text-[#abb8c3]'}`}>
                           ~{gramasPorUn}g por unidade | Total: {formatNumber(totalRecheioG / 1000, 2)} kg
                         </p>
                       )}

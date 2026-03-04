@@ -60,7 +60,7 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_RECEITA);
       if (saved) return JSON.parse(saved);
-    } catch {}
+    } catch { }
     return { nome: "", ingredientes: [] };
   });
 
@@ -68,7 +68,7 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_QTD);
       if (saved) return parseInt(saved) || 100;
-    } catch {}
+    } catch { }
     return 100;
   });
 
@@ -76,7 +76,7 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_MARGEM);
       if (saved) return parseInt(saved) || 5;
-    } catch {}
+    } catch { }
     return 5;
   });
 
@@ -85,7 +85,7 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_SAVED);
       if (saved) return JSON.parse(saved);
-    } catch {}
+    } catch { }
     return [];
   });
 
@@ -220,7 +220,7 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
 
       {/* Título */}
       <div className="mb-6">
-        <h1 className="text-3xl mb-2 text-[#3D1E12]">Modo Livre</h1>
+        <h1 className="text-3xl mb-2 text-[#757575]">Modo Livre</h1>
         <p className="text-gray-600">
           Crie sua receita, cadastre seus ingredientes com preços reais e calcule o custo exato
         </p>
@@ -293,8 +293,8 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
           {/* Produção */}
           <Card className="border-2 border-gray-200">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-[#3D1E12]">
-                <Calculator className="h-5 w-5 text-[#FFD100]" />
+              <CardTitle className="flex items-center gap-2 text-[#757575]">
+                <Calculator className="h-5 w-5 text-[#cf2e2e]" />
                 Produção
               </CardTitle>
             </CardHeader>
@@ -331,7 +331,7 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
                     onChange={(e) =>
                       setMargemSeguranca(parseInt(e.target.value))
                     }
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#FFD100] mt-3"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#cf2e2e] mt-3"
                   />
                   <p className="text-xs text-muted-foreground">
                     Compensa quebras e perdas na produção
@@ -344,7 +344,7 @@ export function FreeCalculator({ onBack }: FreeCalculatorProps) {
                 <div className="grid grid-cols-3 gap-3 pt-2">
                   <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-center">
                     <p className="text-xs text-gray-500 mb-0.5">Produção</p>
-                    <p className="text-lg text-[#3D1E12]">{quantidade}</p>
+                    <p className="text-lg text-[#757575]">{quantidade}</p>
                     <p className="text-[10px] text-gray-400">unidades</p>
                   </div>
                   <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-center">

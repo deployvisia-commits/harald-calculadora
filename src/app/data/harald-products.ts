@@ -231,29 +231,28 @@ export const haraldCatalog: HaraldCatalog = {
     },
     {
       nome: "Confeiteiro",
-      tipo: "Chocolate Nobre",
+      tipo: "Cobertura Fracionada",
+      instrucoes: "Dispensa temperagem. Basta derreter e usar.",
       produtos: [
         {
           id: "confeiteiro-ao-leite",
           sabor: "Ao Leite",
           curva_temperatura: {
             derretimento: { min: 45, max: 50 },
-            tempera: { min: 28, max: 29 },
-            trabalho: { min: 30, max: 32 },
+            trabalho: { min: 38, max: 42 },
           },
           fluidez: "Média",
-          fator_rendimento_banho: 1.0,
+          fator_rendimento_banho: 1.8,
         },
         {
           id: "confeiteiro-branco",
           sabor: "Branco",
           curva_temperatura: {
-            derretimento: { min: 40, max: 45 },
-            tempera: { min: 27, max: 28 },
-            trabalho: { min: 28, max: 29 },
+            derretimento: { min: 45, max: 50 },
+            trabalho: { min: 38, max: 42 },
           },
           fluidez: "Média",
-          fator_rendimento_banho: 1.0,
+          fator_rendimento_banho: 1.8,
         },
       ],
     },

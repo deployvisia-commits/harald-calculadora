@@ -247,7 +247,7 @@ export function getIngredientes(): IngredienteCadastrado[] {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed) && parsed.length > 0) return parsed;
     }
-  } catch {}
+  } catch { }
   return [...INGREDIENTES_DEFAULT];
 }
 
@@ -299,7 +299,7 @@ export const CATEGORIA_LABELS: Record<
   CategoriaIngrediente,
   { label: string; emoji: string; cor: string }
 > = {
-  chocolate: { label: "Chocolate", emoji: "🍫", cor: "bg-[#3D1E12] text-white" },
+  chocolate: { label: "Chocolate", emoji: "🍫", cor: "bg-[#cf2e2e] text-white" },
   inclusao: { label: "Inclusão", emoji: "🥜", cor: "bg-amber-100 text-amber-800" },
   recheio: { label: "Recheio", emoji: "🍯", cor: "bg-blue-100 text-blue-800" },
   embalagem: { label: "Embalagem", emoji: "📦", cor: "bg-purple-100 text-purple-800" },

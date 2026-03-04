@@ -74,11 +74,11 @@ export function BusinessBox({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <Card className="border-2 border-emerald-400 bg-gradient-to-br from-white via-emerald-50/30 to-green-50/50 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-emerald-200/30 to-transparent rounded-full blur-3xl" />
+      <Card className="border-2 border-[#7bdcb5] bg-[#7bdcb5]/10 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-48 h-48 bg-[#7bdcb5]/20 rounded-full blur-3xl" />
 
         <CardHeader className="relative z-10">
-          <CardTitle className="flex items-center gap-2 text-emerald-800">
+          <CardTitle className="flex items-center gap-2 text-[#757575]">
             <BarChart3 className="h-5 w-5" />
             Simulador de Negócio
           </CardTitle>
@@ -91,13 +91,13 @@ export function BusinessBox({
           {/* Custo por unidade */}
           <div className="p-4 rounded-xl bg-white/80 border border-emerald-200">
             <div className="flex items-center gap-2 mb-3">
-              <Package className="h-4 w-4 text-emerald-600" />
-              <span className="text-sm text-emerald-900">Custo por Unidade</span>
+              <Package className="h-4 w-4 text-[#757575]" />
+              <span className="text-sm text-[#757575]">Custo por Unidade</span>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <p className="text-xs text-gray-500 mb-0.5">Ingredientes</p>
-                <p className="text-sm text-[#3D1E12]">
+                <p className="text-sm text-[#757575]">
                   {formatCurrency(custoTotalIngredientes / quantidade)}
                 </p>
               </div>
@@ -119,8 +119,8 @@ export function BusinessBox({
               </div>
             </div>
             <div className="mt-3 pt-3 border-t border-emerald-200 flex justify-between items-center">
-              <span className="text-sm text-emerald-900">Custo Total / un.</span>
-              <span className="text-lg text-[#3D1E12]">
+              <span className="text-sm text-[#757575]">Custo Total / un.</span>
+              <span className="text-lg text-[#cf2e2e]">
                 {formatCurrency(custoPorUnidade)}
               </span>
             </div>
@@ -129,7 +129,7 @@ export function BusinessBox({
           {/* Margem de lucro */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <Label className="text-sm text-emerald-900">Margem de Lucro</Label>
+              <Label className="text-sm text-[#757575]">Margem de Lucro</Label>
               <div className="flex items-center gap-2">
                 <Input
                   type="number"
@@ -139,7 +139,7 @@ export function BusinessBox({
                   onChange={(e) =>
                     handleMargemChange(Math.max(10, parseInt(e.target.value) || 100))
                   }
-                  className="h-7 w-16 text-right text-sm"
+                  className="h-7 w-24 text-right text-sm"
                 />
                 <span className="text-sm text-gray-500">%</span>
               </div>
@@ -151,7 +151,7 @@ export function BusinessBox({
               step="5"
               value={margem}
               onChange={(e) => handleMargemChange(parseInt(e.target.value))}
-              className="w-full h-2 bg-gradient-to-r from-red-200 via-amber-200 to-green-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+              className="w-full h-2 bg-[#cf2e2e]/20 rounded-lg appearance-none cursor-pointer accent-[#cf2e2e]"
             />
             <div className="flex justify-between items-center">
               <span className={`text-xs ${getMargemColor()}`}>{getMargemLabel()}</span>
@@ -162,7 +162,7 @@ export function BusinessBox({
           </div>
 
           {/* Preço de venda sugerido */}
-          <div className="p-5 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 text-white">
+          <div className="p-5 rounded-xl bg-[#7bdcb5] text-white">
             <div className="flex items-center gap-2 mb-1">
               <DollarSign className="h-5 w-5 text-emerald-200" />
               <span className="text-emerald-100 text-sm">Preço Sugerido de Venda</span>
@@ -180,7 +180,7 @@ export function BusinessBox({
           <div className="grid grid-cols-2 gap-3">
             <div className="p-3 rounded-xl bg-white/80 border border-emerald-200 text-center">
               <p className="text-xs text-gray-500 mb-1">Faturamento do Lote</p>
-              <p className="text-lg text-[#3D1E12]">
+              <p className="text-lg text-[#757575]">
                 {formatCurrency(faturamentoTotal)}
               </p>
               <p className="text-xs text-gray-400">
@@ -202,7 +202,7 @@ export function BusinessBox({
           <div className="p-3 rounded-lg bg-white/80 border border-emerald-200">
             <div className="flex items-center justify-between text-sm">
               <span className="text-gray-600">Investimento total</span>
-              <span className="text-[#3D1E12]">{formatCurrency(custoTotalProd)}</span>
+              <span className="text-[#757575]">{formatCurrency(custoTotalProd)}</span>
             </div>
             <div className="flex items-center justify-between text-sm mt-1">
               <span className="text-gray-600">Retorno total</span>

@@ -38,7 +38,7 @@ export function CostEditor({
   );
 
   const categoriaLabels: Record<string, { label: string; color: string }> = {
-    chocolate: { label: "Chocolate", color: "bg-[#3D1E12] text-white" },
+    chocolate: { label: "Chocolate", color: "bg-[#cf2e2e] text-white" },
     inclusao: { label: "Inclusões", color: "bg-amber-100 text-amber-800" },
     recheio: { label: "Recheio", color: "bg-blue-100 text-blue-800" },
   };
@@ -51,11 +51,11 @@ export function CostEditor({
   );
 
   return (
-    <Card className="border-2 border-[#FFD100]/50">
+    <Card className="border-2 border-[#cf2e2e]/50">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-[#3D1E12]">
-            <DollarSign className="h-5 w-5 text-[#FFD100]" />
+          <CardTitle className="flex items-center gap-2 text-[#757575]">
+            <DollarSign className="h-5 w-5 text-[#cf2e2e]" />
             Custos de Ingredientes
           </CardTitle>
           <div className="flex items-center gap-2">
@@ -89,9 +89,9 @@ export function CostEditor({
 
       <CardContent className="space-y-4">
         {/* Total geral sempre visível */}
-        <div className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-[#FFD100]/10 to-amber-50 border border-[#FFD100]/30">
-          <span className="text-sm text-[#3D1E12]">Custo Total dos Ingredientes</span>
-          <span className="text-xl text-[#3D1E12]">
+        <div className="flex items-center justify-between p-3 rounded-xl bg-[#cf2e2e]/10 border border-[#cf2e2e]/30">
+          <span className="text-sm text-[#757575]">Custo Total dos Ingredientes</span>
+          <span className="text-xl text-[#757575]">
             {formatCurrency(custoTotal)}
           </span>
         </div>
@@ -156,9 +156,8 @@ export function CostEditor({
                                     parseFloat(e.target.value) || 0
                                   )
                                 }
-                                className={`h-7 text-right text-xs ${
-                                  isEditado ? "border-amber-300 bg-amber-50" : ""
-                                }`}
+                                className={`h-7 text-right text-xs ${isEditado ? "border-amber-300 bg-amber-50" : ""
+                                  }`}
                               />
                             </div>
                             <p className="text-[10px] text-gray-400 text-right mt-0.5">
@@ -168,7 +167,7 @@ export function CostEditor({
 
                           {/* Subtotal */}
                           <div className="col-span-4 text-right">
-                            <span className="text-sm text-[#3D1E12]">
+                            <span className="text-sm text-[#757575]">
                               {formatCurrency(item.custoTotal)}
                             </span>
                           </div>

@@ -107,7 +107,7 @@ export default function Tempering() {
               <SelectContent>
                 {haraldCatalog.linhas.map((linha) => (
                   <SelectGroup key={linha.nome}>
-                    <SelectLabel className="text-[#3D1E12]">
+                    <SelectLabel className="text-[#757575]">
                       {linha.nome} - {linha.tipo}
                     </SelectLabel>
                     {linha.produtos.map((produto) => (
@@ -172,8 +172,8 @@ export default function Tempering() {
                 </ul>
               </div>
 
-              <div className="p-4 bg-[#FFD100]/20 border-2 border-[#FFD100] rounded-lg">
-                <p className="text-sm text-[#3D1E12]">
+              <div className="p-4 bg-[#cf2e2e]/10 border-2 border-[#cf2e2e]/30 rounded-lg">
+                <p className="text-sm text-[#757575]">
                   <strong>Produto Selecionado:</strong> {selectedProduct.sabor} - {selectedLine?.nome}
                 </p>
                 {isCoberturaProduct && (
@@ -214,15 +214,14 @@ export default function Tempering() {
                   <button
                     key={method}
                     onClick={() => setCoolingMethod(method)}
-                    className={`w-full p-4 text-left rounded-lg border-2 transition-all ${
-                      coolingMethod === method
-                        ? "border-[#FFD100] bg-[#FFD100]/10"
-                        : "border-gray-200 hover:border-[#FFD100]/50"
-                    }`}
+                    className={`w-full p-4 text-left rounded-lg border-2 transition-all ${coolingMethod === method
+                        ? "border-[#cf2e2e] bg-[#cf2e2e]/10"
+                        : "border-[#abb8c3]/40 hover:border-[#cf2e2e]/50"
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       {coolingMethod === method && (
-                        <CheckCircle2 className="h-5 w-5 text-[#FFD100]" />
+                        <CheckCircle2 className="h-5 w-5 text-[#cf2e2e]" />
                       )}
                       <span className="">{method}</span>
                     </div>
@@ -259,7 +258,7 @@ export default function Tempering() {
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="p-6 bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 rounded-lg">
+              <div className="p-6 bg-[#fcb900]/10 border-2 border-[#fcb900]/30 rounded-lg">
                 <div className="text-center mb-4">
                   <div className="text-4xl mb-2">
                     {selectedProduct.curva_temperatura.derretimento.min}°C - {selectedProduct.curva_temperatura.derretimento.max}°C
@@ -328,7 +327,7 @@ export default function Tempering() {
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-lg">
+              <div className="p-6 bg-[#8ed1fc]/10 border-2 border-[#8ed1fc]/30 rounded-lg">
                 <div className="text-center mb-4">
                   <div className="text-4xl mb-2">
                     {selectedProduct.curva_temperatura.tempera?.alvo
@@ -341,7 +340,7 @@ export default function Tempering() {
 
               <div className="space-y-3">
                 <h4 className="text-sm">Método Selecionado: <strong>{coolingMethod}</strong></h4>
-                
+
                 {coolingMethod.includes("Tablagem") && (
                   <ol className="space-y-2 text-sm text-muted-foreground list-decimal list-inside">
                     <li>Despeje 2/3 do chocolate derretido sobre uma superfície de mármore limpa e seca</li>
@@ -420,7 +419,7 @@ export default function Tempering() {
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg">
+              <div className="p-6 bg-[#7bdcb5]/10 border-2 border-[#7bdcb5]/30 rounded-lg">
                 <div className="text-center mb-4">
                   <div className="text-4xl mb-2">
                     {selectedProduct.curva_temperatura.trabalho?.alvo
@@ -435,9 +434,9 @@ export default function Tempering() {
                 <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
                   <h4 className="text-sm mb-2">💡 Dica Profissional:</h4>
                   <p className="text-sm text-purple-900">
-                    Se o chocolate estiver muito denso, aqueça por 5 segundos no micro-ondas para elevar 
-                    {selectedProduct.curva_temperatura.trabalho.min && selectedProduct.curva_temperatura.trabalho.max && 
-                      ` até ${selectedProduct.curva_temperatura.trabalho.max}°C`}. 
+                    Se o chocolate estiver muito denso, aqueça por 5 segundos no micro-ondas para elevar
+                    {selectedProduct.curva_temperatura.trabalho.min && selectedProduct.curva_temperatura.trabalho.max &&
+                      ` até ${selectedProduct.curva_temperatura.trabalho.max}°C`}.
                     Isso dará mais fluidez e brilho ao produto final.
                   </p>
                 </div>
@@ -571,7 +570,7 @@ export default function Tempering() {
                 </p>
               </div>
 
-              <div className="p-4 bg-[#FFD100]/20 border border-[#FFD100] rounded-lg">
+              <div className="p-4 bg-[#cf2e2e]/10 border border-[#cf2e2e]/30 rounded-lg">
                 <h4 className="text-sm mb-2">💡 Lembre-se:</h4>
                 <ul className="space-y-1 text-sm list-disc list-inside">
                   <li>Mantenha o chocolate na temperatura de trabalho enquanto usa</li>
@@ -599,13 +598,13 @@ export default function Tempering() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-[#abb8c3]/10">
       <Navigation />
 
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12">
         <div className="mb-8">
-          <h1 className="text-3xl mb-2 text-[#3D1E12]">Assistente de Temperagem</h1>
-          <p className="text-gray-600">Guia passo a passo com temperaturas precisas</p>
+          <h1 className="text-3xl mb-2 text-[#757575]">Assistente de Temperagem</h1>
+          <p className="text-[#757575]">Guia passo a passo com temperaturas precisas</p>
         </div>
 
         {selectedProduct && currentStep !== "environment" && (

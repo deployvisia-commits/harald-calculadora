@@ -129,10 +129,10 @@ export function RecipeBuilder({
   });
 
   return (
-    <Card className="border-2 border-[#FFD100]">
+    <Card className="border-2 border-[#cf2e2e]">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-[#3D1E12]">
-          <ChefHat className="h-5 w-5 text-[#FFD100]" />
+        <CardTitle className="flex items-center gap-2 text-[#757575]">
+          <ChefHat className="h-5 w-5 text-[#cf2e2e]" />
           Minha Receita
         </CardTitle>
         <p className="text-sm text-gray-500">
@@ -193,7 +193,7 @@ export function RecipeBuilder({
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, x: -20, height: 0 }}
-                      className="p-3 rounded-xl bg-gradient-to-r from-gray-50 to-amber-50/20 border border-gray-200 space-y-2"
+                      className="p-3 rounded-xl bg-[#abb8c3]/10 border border-gray-200 space-y-2"
                     >
                       <div className="flex items-center gap-2">
                         {/* Ingrediente select */}
@@ -210,7 +210,7 @@ export function RecipeBuilder({
                                 ([cat, itens]) => {
                                   const catL =
                                     CATEGORIA_LABELS[
-                                      cat as keyof typeof CATEGORIA_LABELS
+                                    cat as keyof typeof CATEGORIA_LABELS
                                     ];
                                   return (
                                     <SelectGroup key={cat}>
@@ -243,7 +243,7 @@ export function RecipeBuilder({
                                 parseFloat(e.target.value) || 0
                               )
                             }
-                            className="h-8 text-sm text-right w-16"
+                            className="h-8 text-sm text-right w-24"
                           />
                           <span className="text-xs text-gray-400 w-5">
                             {isUnitario ? "un" : "g"}
@@ -287,7 +287,7 @@ export function RecipeBuilder({
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
-              className="p-3 border-2 border-dashed border-[#FFD100] rounded-xl bg-amber-50/30 space-y-3"
+              className="p-3 border-2 border-dashed border-[#cf2e2e] rounded-xl bg-amber-50/30 space-y-3"
             >
               <div className="flex items-center gap-2">
                 <div className="flex-1">
@@ -323,7 +323,7 @@ export function RecipeBuilder({
                     placeholder="Qtd"
                     value={newQtd || ""}
                     onChange={(e) => setNewQtd(parseFloat(e.target.value) || 0)}
-                    className="h-8 text-sm w-16 text-right"
+                    className="h-8 text-sm w-24 text-right"
                   />
                   <span className="text-xs text-gray-400">g</span>
                 </div>
@@ -348,7 +348,7 @@ export function RecipeBuilder({
               </div>
               <button
                 onClick={onAddIngredienteToCadastro}
-                className="text-xs text-[#FFD100] hover:text-amber-600 flex items-center gap-1 cursor-pointer"
+                className="text-xs text-[#cf2e2e] hover:text-[#cf2e2e]/80 flex items-center gap-1 cursor-pointer"
               >
                 <Info className="h-3 w-3" />
                 Não encontrou? Cadastre um novo ingrediente abaixo
@@ -369,7 +369,7 @@ export function RecipeBuilder({
 
         {/* Resumo de custo por unidade */}
         {receita.ingredientes.length > 0 && (
-          <div className="p-3 rounded-xl bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200">
+          <div className="p-3 rounded-xl bg-[#7bdcb5]/20 border border-emerald-200">
             <div className="flex items-center justify-between">
               <span className="text-sm text-emerald-800">
                 Custo por unidade

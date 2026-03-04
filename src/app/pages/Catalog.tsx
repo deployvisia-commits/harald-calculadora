@@ -30,7 +30,7 @@ const itemVariants = {
 
 export default function Catalog() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <div className="min-h-screen bg-[#abb8c3]/10">
       <Navigation />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
@@ -40,10 +40,10 @@ export default function Catalog() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#3D1E12] via-[#5D3E32] to-[#3D1E12] bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-4 text-[#cf2e2e]">
             Catálogo Técnico Harald
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#757575] max-w-2xl mx-auto">
             Especificações completas de temperatura, fluidez e rendimento de cada linha
           </p>
         </motion.div>
@@ -58,17 +58,17 @@ export default function Catalog() {
               transition={{ duration: 0.6, delay: linhaIndex * 0.1 }}
             >
               <div className="mb-6">
-                <h2 className="text-3xl font-bold text-[#3D1E12] mb-2">{linha.nome}</h2>
-                <p className="text-base text-gray-600">{linha.tipo}</p>
+                <h2 className="text-3xl font-bold text-[#757575] mb-2">{linha.nome}</h2>
+                <p className="text-base text-[#757575]">{linha.tipo}</p>
                 {linha.instrucoes && (
                   <motion.div
                     initial={{ scale: 0.95, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="mt-4 p-4 bg-gradient-to-r from-[#FFD100]/10 to-[#FFD100]/5 border-2 border-[#FFD100]/30 rounded-2xl inline-block backdrop-blur-sm"
+                    className="mt-4 p-4 bg-[#cf2e2e]/10 border-2 border-[#cf2e2e]/30 rounded-2xl inline-block backdrop-blur-sm"
                   >
-                    <p className="text-sm text-[#3D1E12] font-medium flex items-center gap-2">
+                    <p className="text-sm text-[#cf2e2e] font-medium flex items-center gap-2">
                       <span className="text-xl">💡</span>
                       {linha.instrucoes}
                     </p>
@@ -86,10 +86,10 @@ export default function Catalog() {
                 {linha.produtos.map((produto) => (
                   <motion.div key={produto.id} variants={itemVariants}>
                     <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden group bg-white/70 backdrop-blur-sm">
-                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#FFD100]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      
+                      <div className="absolute inset-0 bg-[#cf2e2e]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
                       <CardHeader className="relative">
-                        <CardTitle className="text-xl font-bold text-[#3D1E12]">
+                        <CardTitle className="text-xl font-bold text-[#757575]">
                           {produto.sabor}
                         </CardTitle>
                         <CardDescription className="flex items-center gap-2 mt-3 text-base">
@@ -97,15 +97,15 @@ export default function Catalog() {
                           <span className="font-medium">Fluidez: {produto.fluidez}</span>
                         </CardDescription>
                       </CardHeader>
-                      
+
                       <CardContent className="space-y-4 relative">
                         {/* Temperature Curves */}
                         <div className="space-y-3">
                           <motion.div
                             whileHover={{ scale: 1.02 }}
-                            className="flex items-start gap-3 p-4 bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-2xl border border-orange-200/50"
+                            className="flex items-start gap-3 p-4 bg-[#fcb900]/10 rounded-2xl border border-[#fcb900]/30"
                           >
-                            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-lg">
+                            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#d99e4c] flex items-center justify-center shadow-lg">
                               <Thermometer className="h-5 w-5 text-white" />
                             </div>
                             <div className="flex-1">
@@ -121,9 +121,9 @@ export default function Catalog() {
                           {produto.curva_temperatura.tempera && (
                             <motion.div
                               whileHover={{ scale: 1.02 }}
-                              className="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl border border-blue-200/50"
+                              className="flex items-start gap-3 p-4 bg-[#8ed1fc]/10 rounded-2xl border border-[#8ed1fc]/30"
                             >
-                              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg">
+                              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#8ed1fc] flex items-center justify-center shadow-lg">
                                 <Thermometer className="h-5 w-5 text-white" />
                               </div>
                               <div className="flex-1">
@@ -141,9 +141,9 @@ export default function Catalog() {
 
                           <motion.div
                             whileHover={{ scale: 1.02 }}
-                            className="flex items-start gap-3 p-4 bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl border border-green-200/50"
+                            className="flex items-start gap-3 p-4 bg-[#7bdcb5]/10 rounded-2xl border border-[#7bdcb5]/30"
                           >
-                            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-lg">
+                            <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#7bdcb5] flex items-center justify-center shadow-lg">
                               <Thermometer className="h-5 w-5 text-white" />
                             </div>
                             <div className="flex-1">
@@ -162,9 +162,9 @@ export default function Catalog() {
                         {/* Yield Factor */}
                         <motion.div
                           whileHover={{ scale: 1.02 }}
-                          className="flex items-start gap-3 p-4 bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl border border-purple-200/50"
+                          className="flex items-start gap-3 p-4 bg-[#9b51e0]/10 rounded-2xl border border-[#9b51e0]/30"
                         >
-                          <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#9b51e0] flex items-center justify-center shadow-lg">
                             <TrendingUp className="h-5 w-5 text-white" />
                           </div>
                           <div className="flex-1">
@@ -187,7 +187,7 @@ export default function Catalog() {
                           <motion.div
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
-                            className="flex items-start gap-3 p-4 bg-gradient-to-br from-yellow-50 to-amber-100/50 rounded-2xl border-2 border-yellow-300/50"
+                            className="flex items-start gap-3 p-4 bg-[#fcb900]/10 rounded-2xl border-2 border-[#fcb900]/30"
                           >
                             <Info className="h-5 w-5 text-yellow-600 mt-0.5 shrink-0" />
                             <p className="text-sm text-yellow-900 font-medium leading-relaxed">
@@ -212,7 +212,7 @@ export default function Catalog() {
           transition={{ duration: 0.8 }}
           className="mt-20 grid md:grid-cols-2 gap-8"
         >
-          <Card className="border-0 shadow-2xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white overflow-hidden relative">
+          <Card className="border-0 shadow-2xl bg-[#8ed1fc] text-[#757575] overflow-hidden relative">
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
             <CardHeader className="relative">
               <CardTitle className="text-2xl">Entendendo a Fluidez</CardTitle>
@@ -229,16 +229,16 @@ export default function Catalog() {
                   initial={{ x: -20, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex justify-between items-center p-3 bg-white/20 backdrop-blur-sm rounded-xl"
+                  className="flex justify-between items-center p-3 bg-white/40 backdrop-blur-sm rounded-xl"
                 >
                   <span className="font-semibold">{item.nivel}</span>
-                  <span className="text-blue-100 text-right">{item.desc}</span>
+                  <span className="text-[#757575] text-right">{item.desc}</span>
                 </motion.div>
               ))}
             </CardContent>
           </Card>
 
-          <Card className="border-0 shadow-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white overflow-hidden relative">
+          <Card className="border-0 shadow-2xl bg-[#9b51e0] text-white overflow-hidden relative">
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
             <CardHeader className="relative">
               <CardTitle className="text-2xl">Métodos de Resfriamento</CardTitle>

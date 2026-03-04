@@ -90,7 +90,7 @@ export function FreeShoppingList({ itens, quantidade }: FreeShoppingListProps) {
                 <div className="flex items-center justify-between pb-1.5 border-b border-gray-200">
                   <div className="flex items-center gap-2">
                     <span className="text-sm">{catInfo.emoji}</span>
-                    <span className="text-sm text-[#3D1E12]">{catInfo.label}</span>
+                    <span className="text-sm text-[#757575]">{catInfo.label}</span>
                   </div>
                   <span className="text-xs text-gray-500">
                     {formatCurrency(subtotal)}
@@ -117,12 +117,12 @@ export function FreeShoppingList({ itens, quantidade }: FreeShoppingListProps) {
                             {isUn
                               ? `${formatNumber(item.quantidadeTotalG, 0)} un`
                               : item.quantidadeTotalG >= 1000
-                              ? `${formatNumber(item.quantidadeTotalG / 1000, 2)} kg`
-                              : `${formatNumber(item.quantidadeTotalG, 0)} g`}
+                                ? `${formatNumber(item.quantidadeTotalG / 1000, 2)} kg`
+                                : `${formatNumber(item.quantidadeTotalG, 0)} g`}
                           </p>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm text-[#3D1E12]">
+                          <p className="text-sm text-[#757575]">
                             {formatCurrency(item.custoTotal)}
                           </p>
                         </div>
@@ -155,10 +155,10 @@ export function FreeShoppingList({ itens, quantidade }: FreeShoppingListProps) {
           })}
 
           {/* Total geral */}
-          <div className="pt-3 border-t-2 border-green-300">
-            <div className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 text-white">
-              <span>Total da Compra</span>
-              <span className="text-xl">{formatCurrency(custoTotal)}</span>
+          <div className="pt-3 border-t-2 border-[#7bdcb5] mt-4">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-[#7bdcb5] text-white">
+              <span className="font-semibold text-gray-800">Total da Compra</span>
+              <span className="text-xl font-bold text-gray-800">{formatCurrency(custoTotal)}</span>
             </div>
             <div className="flex items-center justify-between mt-2 px-1">
               <span className="text-xs text-gray-500">Custo por unidade</span>

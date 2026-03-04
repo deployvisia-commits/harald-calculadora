@@ -105,7 +105,7 @@ export default function Calculator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-amber-50/30">
+    <div className="min-h-screen bg-[#abb8c3]/10">
       <Navigation />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12">
@@ -261,7 +261,7 @@ export default function Calculator() {
                 <CardHeader className="flex-shrink-0">
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center gap-2">
-                      <FolderOpen className="h-5 w-5 text-[#FFD100]" />
+                      <FolderOpen className="h-5 w-5 text-[#cf2e2e]" />
                       Meus Projetos
                     </CardTitle>
                     <button
@@ -292,15 +292,14 @@ export default function Calculator() {
                         <div className="flex items-start justify-between gap-3">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1">
-                              <span className="text-[#3D1E12] truncate">
+                              <span className="text-[#757575] truncate">
                                 {projeto.nome}
                               </span>
                               <span
-                                className={`text-xs px-2 py-0.5 rounded-full ${
-                                  projeto.modo === "guided"
-                                    ? "bg-[#FFD100]/20 text-[#3D1E12]"
-                                    : "bg-gray-200 text-gray-700"
-                                }`}
+                                className={`text-xs px-2 py-0.5 rounded-full ${projeto.modo === "guided"
+                                    ? "bg-[#cf2e2e]/10 text-[#757575]"
+                                    : "bg-gray-200 text-[#757575]"
+                                  }`}
                               >
                                 {projeto.modo === "guided" ? "Guiado" : "Livre"}
                               </span>
