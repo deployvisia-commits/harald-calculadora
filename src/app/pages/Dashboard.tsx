@@ -10,7 +10,7 @@ const features = [
     icon: Calculator,
     title: "Calculadora de Produção",
     description: "Planeje sua produção do zero: objetivo, chocolate, inclusões, recheio e lista de compras",
-    gradient: "from-blue-500 to-cyan-500",
+    bgColor: "bg-[#8ed1fc]",
     path: "/calculadora",
     color: "blue",
   },
@@ -18,7 +18,7 @@ const features = [
     icon: Thermometer,
     title: "Assistente de Temperagem",
     description: "Guia passo a passo com temperaturas específicas por produto",
-    gradient: "from-orange-500 to-red-500",
+    bgColor: "bg-[#d99e4c]",
     path: "/temperagem",
     color: "orange",
   },
@@ -26,7 +26,7 @@ const features = [
     icon: BookOpen,
     title: "Catálogo Técnico",
     description: "Especificações completas de todas as linhas Harald",
-    gradient: "from-purple-500 to-pink-500",
+    bgColor: "bg-[#9b51e0]",
     path: "/catalogo",
     color: "purple",
   },
@@ -58,7 +58,7 @@ const itemVariants = {
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <div className="min-h-screen bg-[#abb8c3]/10">
       <Navigation />
 
       {/* Hero Section */}
@@ -73,21 +73,21 @@ export default function Dashboard() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FFD100]/20 to-[#FFD100]/10 border border-[#FFD100]/30 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#cf2e2e]/10 border border-[#cf2e2e]/30 mb-6"
           >
-            <Sparkles className="h-4 w-4 text-[#3D1E12]" />
-            <span className="text-sm font-semibold text-[#3D1E12]">
+            <Sparkles className="h-4 w-4 text-[#cf2e2e]" />
+            <span className="text-sm font-semibold text-[#cf2e2e]">
               Assistente Profissional para Confeiteiros
             </span>
           </motion.div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-br from-[#3D1E12] via-[#5D3E32] to-[#3D1E12] bg-clip-text text-transparent">
+            <span className="text-[#cf2e2e]">
               Assistente Harald
             </span>
           </h1>
 
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#757575] mb-12 max-w-2xl mx-auto leading-relaxed">
             Ferramentas profissionais para otimizar seus processos, reduzir custos e
             alcançar resultados perfeitos com chocolates Harald
           </p>
@@ -99,7 +99,7 @@ export default function Dashboard() {
           >
             <Link
               to="/calculadora"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FFD100] to-[#FFDD33] text-[#3D1E12] font-semibold rounded-2xl shadow-lg shadow-[#FFD100]/30 hover:shadow-xl hover:shadow-[#FFD100]/40 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#cf2e2e] text-white font-semibold rounded-2xl shadow-lg shadow-[#cf2e2e]/30 hover:shadow-xl hover:shadow-[#cf2e2e]/40 transition-all duration-300"
             >
               Começar Agora
               <ArrowRight className="h-5 w-5" />
@@ -123,18 +123,18 @@ export default function Dashboard() {
                 <Link to={feature.path} className="block group">
                   <Card className="h-full border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden relative bg-white/70 backdrop-blur-sm">
                     {/* Gradient overlay on hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                    <div className={`absolute inset-0 ${feature.bgColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
                     <CardHeader className="relative">
                       <motion.div
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.6 }}
-                        className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 shadow-lg`}
+                        className={`w-14 h-14 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-4 shadow-lg`}
                       >
                         <Icon className="h-7 w-7 text-white" />
                       </motion.div>
 
-                      <CardTitle className="text-2xl mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${feature.gradient} transition-all duration-300">
+                      <CardTitle className="text-2xl mb-2 text-[#757575] transition-all duration-300">
                         {feature.title}
                       </CardTitle>
 
@@ -144,7 +144,7 @@ export default function Dashboard() {
                     </CardHeader>
 
                     <CardContent>
-                      <div className="flex items-center gap-2 text-sm font-semibold text-gray-600 group-hover:text-[#3D1E12] transition-colors duration-300">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[#757575] group-hover:text-[#cf2e2e] transition-colors duration-300">
                         Acessar
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
@@ -166,10 +166,10 @@ export default function Dashboard() {
         className="px-4 sm:px-6 lg:px-8 pb-20"
       >
         <div className="max-w-4xl mx-auto">
-          <Card className="border-0 shadow-2xl bg-gradient-to-br from-[#3D1E12] to-[#5D3E32] text-white overflow-hidden relative">
+          <Card className="border-0 shadow-2xl bg-[#cf2e2e] text-white overflow-hidden relative">
             {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFD100] rounded-full blur-3xl opacity-20" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FFD100] rounded-full blur-3xl opacity-10" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl opacity-20" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/20 rounded-full blur-3xl opacity-10" />
 
             <CardHeader className="relative z-10">
               <CardTitle className="text-3xl mb-4">
@@ -180,48 +180,48 @@ export default function Dashboard() {
             <CardContent className="relative z-10 space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#FFD100] flex items-center justify-center">
-                    <span className="text-[#3D1E12] font-bold">1</span>
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold">1</span>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-lg">Economia de Tempo</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       Cálculos automáticos e precisos em segundos
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#FFD100] flex items-center justify-center">
-                    <span className="text-[#3D1E12] font-bold">2</span>
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold">2</span>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-lg">Maior Lucro</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       Compare linhas e escolha a mais rentável
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#FFD100] flex items-center justify-center">
-                    <span className="text-[#3D1E12] font-bold">3</span>
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold">3</span>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-lg">Qualidade Garantida</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       Temperagem perfeita com instruções precisas
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#FFD100] flex items-center justify-center">
-                    <span className="text-[#3D1E12] font-bold">4</span>
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold">4</span>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-lg">Dados Salvos</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       Seus preços ficam salvos no navegador
                     </p>
                   </div>

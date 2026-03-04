@@ -21,7 +21,7 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50"
     >
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-xl border-b border-gray-200/50" />
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-xl border-b border-[#abb8c3]/40" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -34,10 +34,10 @@ export function Navigation() {
               <Logo className="h-12 w-auto" />
             </motion.div>
             <div className="hidden sm:block">
-              <span className="text-xl font-semibold bg-gradient-to-r from-[#3D1E12] via-[#5D3E32] to-[#3D1E12] bg-clip-text text-transparent">
+              <span className="text-xl font-semibold text-[#cf2e2e]">
                 Assistente Harald
               </span>
-              <p className="text-xs text-gray-500 font-medium">Ferramenta Profissional</p>
+              <p className="text-xs text-[#757575] font-medium">Ferramenta Profissional</p>
             </div>
           </Link>
 
@@ -58,15 +58,15 @@ export function Navigation() {
                     className={`
                       flex items-center gap-2 px-4 py-2.5 rounded-2xl transition-all duration-300
                       ${isActive
-                        ? "text-[#3D1E12] shadow-lg shadow-[#FFD100]/30"
-                        : "text-gray-600 hover:text-[#3D1E12] hover:bg-gray-100/80"
+                        ? "text-white shadow-lg shadow-[#cf2e2e]/30"
+                        : "text-[#757575] hover:text-[#757575] hover:bg-[#abb8c3]/10"
                       }
                     `}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute inset-0 bg-gradient-to-br from-[#FFD100] via-[#FFDD33] to-[#FFD100] rounded-2xl"
+                        className="absolute inset-0 bg-[#cf2e2e] rounded-2xl"
                         initial={false}
                         transition={{
                           type: "spring",
